@@ -8,14 +8,21 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">{{userName}}</div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
 
     <script>
-        Vue.createApp({}).mount('#app');
+        const app = Vue.createApp({
+            data() {
+                return {
+                    userName: "Benjamin Lupa",
+                }
+            }
+        }).mount('#app');
 
+        console.log(app.userName)
     </script>
 </body>
 
