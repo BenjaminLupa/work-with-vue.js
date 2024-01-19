@@ -19,6 +19,10 @@
         <p>Dein Name hat {{userName.length}} characters</p>
     </div>
 
+    <div id="app4">
+        <p>Mein Name lautet <span v-highlight>{{userName}}</span></p>
+    </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         const app = Vue.createApp({
@@ -44,6 +48,22 @@
                 }
             },
         }).mount("#app3")
+
+        const app4 = Vue.createApp({
+            data() {
+                return {
+                    userName: "Bill Gates"
+                }
+            },
+            directives: {
+                highlight: {
+                    mounted(el) {
+                        el.style.border = "1px solid black";
+                        el.style.backgroundColor = "yellow"
+                    },
+                }
+            }
+        }).mount("#app4")
 
     </script>
 </body>
