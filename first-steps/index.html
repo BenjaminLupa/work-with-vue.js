@@ -8,9 +8,16 @@
 </head>
 
 <body>
-    <div id="app">{{userName}}</div>
+    <div id="app">{{userName}}
+        <p>{{`Mein Name hat ${userName.length - 1} Buchstaben`}}</p>
+        <p>{{userName.split("").join(" ")}}</p>
+    </div>
+    <div id="app2">{{userName.split("").reverse().join("")}}</div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <div id="app3">
+        <p>Hallo {{userName}} wie geht´s dir?</p>
+        <p>Dein Name hat {{userName.length}} characters</p>
+    </div>
 
 
     <script>
@@ -22,7 +29,22 @@
             }
         }).mount('#app');
 
-        console.log(app.userName)
+        const app2 = Vue.createApp({
+            data() {
+                return {
+                    userName: "Benjamin Lupa"
+                }
+            },
+        }).mount("#app2")
+
+        const app3 = Vue.createApp({
+            data() {
+                return {
+                    userName: "Hans Wurst"
+                }
+            },
+        }).mount("#app3")
+
     </script>
 </body>
 
