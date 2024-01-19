@@ -13,13 +13,13 @@
         <p>{{userName.split("").join(" ")}}</p>
     </div>
     <div id="app2">{{userName.split("").reverse().join("")}}</div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <div id="app3">
         <p>Hallo {{userName}} wie geht´s dir?</p>
         <p>Dein Name hat {{userName.length}} characters</p>
     </div>
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         const app = Vue.createApp({
             data() {
