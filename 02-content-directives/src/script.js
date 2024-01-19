@@ -1,4 +1,4 @@
-Vue.createApp({
+const app = Vue.createApp({
   data() {
     return {
       vueVersion: 3,
@@ -10,4 +10,4 @@ Vue.createApp({
       this.vueVersion++;
     }, 2000);
   },
-});
+}).mount("#app");
