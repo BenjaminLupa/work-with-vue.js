@@ -1,34 +1,15 @@
-# Usage of the v-on Inline Handlers
+# Task: Attribute binding
 
-The `v-on` directive helps you to add event listeners directly on the html element. Like any other directive, everything between the double quotes gets executed as an JavaScript expression. This means you can handle a data property instantly inline. This is also called "inline handlers".
+In this task we use the `attribute binding`.
 
-## Example
+Fulfill the following tasks:
 
-Given: We like to increase a data property `count`.
+- [ ] Don't start from scratch! Use the provided resources in the `src` folder of this coding task.
+- [ ] Convert the headline data property into a valid id and set the ID to the `h1` element.
+  -  Tipp: Id's are always lowercase and only contain letters, number, dashes and underscores. Spaces are not allowed. The replace method will help you. 
+- [ ] Bind the data property `imageAttrs` to the `img` tag.
+  - Tipp `One v-bind per element method` video.
 
-```html
-<div id="app">
-  <p>Count is {{ count }}</p>
-  <button v-on:click="count++">Increase</button>
-</div>
-```
+## Sample solution
 
-```js
-Vue.createApp({
-  data() {
-    return {
-      count: 0,
-    };
-  },
-}).mount("#app");
-```
-
-## Anatomie
-
-As you can see in the example, there is no need to use something like `document.querySelector('button').addEventListener('click', () => {})` anymore. The `v-on` will do that for you much faster.
-
-Vue supports any native javascript event. E. g. `v-on:change`, `v-on:input`, `v-on:mousemove` etc.
-
-## Enough for now
-
-There are much more things to learn about the `v-on` directive but for now you should be able to use the directive for some excersises cause they make much more fun with events ;)
+https://codepen.io/may17-the-typescripter/pen/vYWBJEX
