@@ -49,3 +49,8 @@ main {
   width: 100%;
   background-color: rgb(var(--redValue), var(--greenValue), var(--blueValue));
 }
+
+#app {
+  width: 100%;
+  height: 100%;
+}
