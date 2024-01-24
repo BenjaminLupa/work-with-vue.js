@@ -11,20 +11,18 @@
 
 <body>
     <div id="app">
-
-        <header>
-            <input @input="changeColor('redValue', redValue)" v-model="redValue" class="input" type="range" id="red"
-                step="1" min="0" max="255">
-            <input @input="changeColor('greenValue', greenValue)" class="input" type="range" id="green" step="1" min="0"
-                max="255" v-model="greenValue">
-            <input @input="changeColor('blueValue', blueValue)" class="input" type="range" id="blue" step="1" min="0"
-                max="255" v-model="blueValue">
-            <h2 id="rgbNum">rgb({{redValue}}, {{greenValue}}, {{blueValue}})</h2>
-            <h2 id="hexaNum">{{hexaNumber}}</h2>
+        <div class="div-color" :style="changeColor">
+            <header>
+                <input v-model="redValue" class="input" type="range" id="red" step="1" min="0" max="255">
+                <input class="input" type="range" id="green" step="1" min="0" max="255" v-model="greenValue">
+                <input class="input" type="range" id="blue" step="1" min="0" max="255" v-model="blueValue">
+                <h2 id="rgbNum">rgb({{redValue}}, {{greenValue}}, {{blueValue}})</h2>
+                <h2 id="hexaNum">{{convertRgb}}</h2>
 
 
-        </header>
-        <main></main>
+            </header>
+            <main></main>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

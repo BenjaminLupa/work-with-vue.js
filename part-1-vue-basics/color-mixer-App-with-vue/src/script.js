@@ -7,24 +7,20 @@ const app = Vue.createApp({
       hexaNumber: "#ff69b4",
     };
   },
-  computed: {},
-  methods: {
-    changeColor(color, colorVal) {
-      document.documentElement.style.setProperty(`--${color}`, colorVal);
-      this.convertRgb();
+  computed: {
+    changeColor() {
+      return `--redValue: ${this.redValue}; --greenValue: ${this.greenValue}; --blueValue: ${this.blueValue}`;
     },
     convertRgb() {
-      //4
-      let redVal = this.redValue;
-      let greenVal = this.greenValue;
-      let blueVal = this.blueValue;
       let hexColorCode =
         "#" +
-        this.getHexa(redVal) +
-        this.getHexa(greenVal) +
-        this.getHexa(blueVal);
-      this.hexaNumber = hexColorCode;
+        this.getHexa(this.redValue) +
+        this.getHexa(this.greenValue) +
+        this.getHexa(this.blueValue);
+      return (this.hexaNumber = hexColorCode);
     },
+  },
+  methods: {
     getHexa(value) {
       //4
       let hexa = parseInt(value).toString(16);
